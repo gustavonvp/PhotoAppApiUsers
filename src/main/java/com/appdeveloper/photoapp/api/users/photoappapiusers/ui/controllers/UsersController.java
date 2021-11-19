@@ -1,5 +1,6 @@
 package com.appdeveloper.photoapp.api.users.photoappapiusers.ui.controllers;
 
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,8 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/users")
 public class UsersController {
 
+    private final Environment env;
+
+    public UsersController(Environment env) {
+        this.env = env;
+    }
+
     @GetMapping("/status/check")
     public String status() {
-        return "Working";
+        return
+
+                "Working on port:" + env.getProperty("local.server.port");
     }
 }
