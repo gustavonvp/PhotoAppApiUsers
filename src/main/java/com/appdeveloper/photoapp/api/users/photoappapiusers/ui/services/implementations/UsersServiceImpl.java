@@ -34,7 +34,7 @@ public class UsersServiceImpl implements UsersService {
     public UserDto createUser(UserDto userDetails) {
 
         userDetails.setUserId(UUID.randomUUID().toString());
-        userDetails.setEncryptedPassword(bCryptPasswordEncoder.encode(userDetails.getEncryptedPassword()));
+        userDetails.setEcryptedPassword(bCryptPasswordEncoder.encode(userDetails.getPassword()));
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
@@ -50,7 +50,6 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public UserDto getUserDetailsByEmail(String email) {
-
         UserEntity userEntity = userRepository.findByEmail(email);
 
         if(userEntity == null) throw new UsernameNotFoundException(email);
