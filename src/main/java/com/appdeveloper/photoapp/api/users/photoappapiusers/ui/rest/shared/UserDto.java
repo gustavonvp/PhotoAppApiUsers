@@ -6,21 +6,13 @@ public class UserDto implements Serializable {
 
     private static final long serialVersionUID = -98213918293128958L;
 
-    private String userId;
     private String firstName;
     private String lastName;
     private String email;
-    private String encryptedPassword;
+    private String password;
+    private String userId;
+    private String ecryptedPassword;
 
-
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -46,11 +38,27 @@ public class UserDto implements Serializable {
         this.email = email;
     }
 
-    public String getEncryptedPassword() {
-        return encryptedPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setEncryptedPassword(String encryptedPassword) {
-        this.encryptedPassword = encryptedPassword;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getEcryptedPassword() {
+        return ecryptedPassword;
+    }
+
+    public void setEcryptedPassword(String ecryptedPassword) {
+        this.ecryptedPassword = ecryptedPassword;
     }
 }
