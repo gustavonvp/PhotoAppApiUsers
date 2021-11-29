@@ -1,5 +1,7 @@
 package com.appdeveloper.photoapp.api.users.photoappapiusers.ui.database.persistent;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 
@@ -10,6 +12,8 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="login")
+@AllArgsConstructor
+@NoArgsConstructor
 public class LoginEntity implements Serializable {
 
     private static final long serialVersionUID = -12231554354354321L;

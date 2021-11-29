@@ -7,6 +7,8 @@ import com.appdeveloper.photoapp.api.users.photoappapiusers.ui.rest.model.respon
 import com.appdeveloper.photoapp.api.users.photoappapiusers.ui.rest.shared.LoginDto;
 import com.appdeveloper.photoapp.api.users.photoappapiusers.ui.rest.shared.UserDto;
 import com.appdeveloper.photoapp.api.users.photoappapiusers.ui.services.UsersService;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +17,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/users")
@@ -77,4 +84,9 @@ public class UsersController {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(returnLogin);
 
     }
+
+
+
+
+
 }
