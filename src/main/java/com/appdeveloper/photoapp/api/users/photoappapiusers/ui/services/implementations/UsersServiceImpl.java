@@ -67,7 +67,7 @@ public class UsersServiceImpl implements UsersService {
     public LoginDto loginUser(LoginDto loginDto) {
 
         LoginEntity loginEntity = new LoginEntity();
-
+        loginDto.setUserId(UUID.randomUUID().toString());
         if(loginEntity == null) throw new RuntimeException();
 
 
